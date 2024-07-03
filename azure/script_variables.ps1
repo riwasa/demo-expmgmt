@@ -32,3 +32,8 @@ $resourceGroupName = "$($resourceNamePrefix)-rg"
 # ***********************************************
 # Resource values.
 # ***********************************************
+
+# Budget.
+$actionGroupName = "$($resourceNamePrefix)-ag"
+$actionGroupShortName = "demo-expmgmt"
+$budgetName = "$($resourceNamePrefix)-bdgt"
