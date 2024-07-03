@@ -37,3 +37,6 @@ $resourceGroupName = "$($resourceNamePrefix)-rg"
 $actionGroupName = "$($resourceNamePrefix)-ag"
 $actionGroupShortName = "demo-expmgmt"
 $budgetName = "$($resourceNamePrefix)-bdgt"
+
+# Key Vault.
+$keyVaultName = "$($resourceNamePrefix)-kv"

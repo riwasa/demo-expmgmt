@@ -7,6 +7,7 @@ This folder contains Infrastructure-as-Code (IaC) scripts and templates to creat
 Folder | Description
 ------ | -----------
 budget | Create a Budget.
+key_vault | Create a Key Vault.
 resource_group | Create the Resource Group.
 
 ## Instructions
@@ -20,3 +21,6 @@ resource_group | Create the Resource Group.
     - Update script_variables.ps1 and change the $actionGroupShortName.
     - Edit budget\budget.parameters.json as needed.
     - Run budget\budget.ps1 to create the Budget.
+4. Create a Key Vault.
+    - Update key_vault\key_vault.parameters.json as needed.
+    - Run key_vault\key_vault.ps1 to create the Key Vault.
