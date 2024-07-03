@@ -6,7 +6,7 @@ This folder contains Infrastructure-as-Code (IaC) scripts and templates to creat
 
 Folder | Description
 ------ | -----------
-budet | Create a Budget.
+budget | Create a Budget.
 resource_group | Create the Resource Group.
 
 ## Instructions
