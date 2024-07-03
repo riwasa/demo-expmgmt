@@ -8,6 +8,7 @@ Folder | Description
 ------ | -----------
 budget | Create a Budget.
 key_vault | Create a Key Vault.
+monitor | Create a Log Analytics Workspace and an Application Insights Component.
 resource_group | Create the Resource Group.
 
 ## Instructions
@@ -24,3 +25,6 @@ resource_group | Create the Resource Group.
 4. Create a Key Vault.
     - Update key_vault\key_vault.parameters.json as needed.
     - Run key_vault\key_vault.ps1 to create the Key Vault.
+5. Create a Log Analytics Workspace and an Application Insights Component.
+    - Update monitor\monitor.parameters.json as needed.
+    - Run monitor\monitor.ps1 to create the Log Analytics Workspace and the Application Insights Component.

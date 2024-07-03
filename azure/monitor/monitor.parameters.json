@@ -1,0 +1,39 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "applicationType": {
+      "value": "web"
+    },
+    "dailyQuotaInGB": {
+      "value": 1
+    },
+    "disableIpMasking": {
+      "value": false
+    },
+    "disableLocalAuth": {
+      "value": false
+    },
+    "enableDataExport": {
+      "value": false
+    },
+    "enableLogAccessUsingOnlyResourcePermissions": {
+      "value": true
+    },
+    "kind": {
+      "value": "web"
+    },
+    "publicNetworkAccessForIngestion": {
+      "value": "Enabled"
+    },
+    "publicNetworkAccessForQuery": {
+      "value": "Enabled"
+    },
+    "retentionInDays": {
+      "value": 30
+    },
+    "samplingPercentage": {
+      "value": 100
+    }
+  }
+}

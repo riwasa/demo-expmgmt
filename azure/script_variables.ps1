@@ -40,3 +40,7 @@ $budgetName = "$($resourceNamePrefix)-bdgt"
 
 # Key Vault.
 $keyVaultName = "$($resourceNamePrefix)-kv"
+
+# Monitor.
+$applicationInsightsComponentName = "$($resourceNamePrefix)-appi"
+$logAnalyticsWorkspaceName = "$($resourceNamePrefix)-log"
