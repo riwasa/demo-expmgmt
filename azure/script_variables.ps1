@@ -38,6 +38,10 @@ $actionGroupName = "$($resourceNamePrefix)-ag"
 $actionGroupShortName = "demo-expmgmt"
 $budgetName = "$($resourceNamePrefix)-bdgt"
 
+# Cosmos DB.
+$cosmosDbDatabaseAccountName = "$($resourceNamePrefix)-cosno"
+$cosmosDbDatabaseName = "DemoExpMgmt"
+
 # Key Vault.
 $keyVaultName = "$($resourceNamePrefix)-kv"
 

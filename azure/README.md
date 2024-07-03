@@ -7,6 +7,7 @@ This folder contains Infrastructure-as-Code (IaC) scripts and templates to creat
 Folder | Description
 ------ | -----------
 budget | Create a Budget.
+cosmos_db | Create a Cosmos DB Database Account, Database, and Containers.
 key_vault | Create a Key Vault.
 monitor | Create a Log Analytics Workspace and an Application Insights Component.
 resource_group | Create the Resource Group.
@@ -28,3 +29,7 @@ resource_group | Create the Resource Group.
 5. Create a Log Analytics Workspace and an Application Insights Component.
     - Update monitor\monitor.parameters.json as needed.
     - Run monitor\monitor.ps1 to create the Log Analytics Workspace and the Application Insights Component.
+6. Create a Cosmos DB Database Account, Database, and Containers.
+    - Update cosmos_db\cosmos_db.parameters.json as needed.
+    - Run cosmos_db\cosmos_db.ps1 to create the Cosmos DB Database Account and Database.
+    - Run cosmos_db\cosmos_db-containers.ps1 to create the Cosmos DB Containers.
