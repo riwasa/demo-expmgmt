@@ -26,4 +26,5 @@ az deployment group create `
   --template-file "key_vault.bicep" `
   --parameters "key_vault.parameters.json" `
   --parameters location="$location" `
+               logAnalyticsWorkspaceName="$logAnalyticsWorkspaceName" `
                vaultName="$keyVaultName"

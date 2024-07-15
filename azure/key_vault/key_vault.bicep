@@ -14,6 +14,24 @@
 //
 // *****************************************************************************
 
+@description('The log categories to capture.')
+@allowed([
+  'AuditEvent'
+  'AzurePolicyEvaluationDetails'
+])
+param diagnosticsLogCategoriesToEnable array = [
+  'AuditEvent'
+  'AzurePolicyEvaluationDetails'
+]
+
+@description('The metrics to capture.')
+@allowed([
+  'AllMetrics'
+])
+param diagnosticsMetricsToEnable array = [
+  'AllMetrics'
+]
+
 @description('Indicates if Azure VMs are allowed to retrieve certificates stored as secrets.')
 param enabledForDeployment bool
 
@@ -31,6 +49,9 @@ param enableRbacAuthorization bool
 
 @description('The location of the resources.')
 param location string = resourceGroup().location
+
+@description('The name of the Log Analytics Workspace.')
+param logAnalyticsWorkspaceName string
 
 @description('Indicates if public network access is allowed.')
 @allowed([
@@ -55,6 +76,22 @@ param softDeleteRetentionInDays int = 7
 @description('The name of the Key Vault.')
 param vaultName string
 
+var diagnosticsLogs = [for category in diagnosticsLogCategoriesToEnable: {
+  category: category
+  enabled: true
+}]
+
+var diagnosticsMetrics = [for metric in diagnosticsMetricsToEnable: {
+  category: metric
+  timeGrain: null
+  enabled: true
+}]
+
+// Get the Log Analytics Workspace.
+resource logAnalyticsWorkspace 'Microsoft.OperationalInsights/workspaces@2023-09-01' existing = {
+  name: logAnalyticsWorkspaceName
+}
+
 // Create a Key Vault.
 resource keyVault 'Microsoft.KeyVault/vaults@2023-07-01' = {
   name: vaultName
@@ -74,4 +111,16 @@ resource keyVault 'Microsoft.KeyVault/vaults@2023-07-01' = {
     softDeleteRetentionInDays: softDeleteRetentionInDays
     tenantId: subscription().tenantId
   }
+}
+
+// Create diagnostic settings.
+resource diagnosticSettings 'Microsoft.Insights/diagnosticSettings@2021-05-01-preview' = {
+  name: '${vaultName}-diag'
+  properties: {
+    logs: diagnosticsLogs
+    metrics: diagnosticsMetrics
+    workspaceId: logAnalyticsWorkspace.id
+    logAnalyticsDestinationType: 'Dedicated'
+  }
+  scope: keyVault
 }
