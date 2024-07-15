@@ -54,11 +54,6 @@ param diagnosticsMetricsToEnable array = [
   'Requests'
 ]
 
-@description('The number of days that logs and metrics will be kept for; a value of 0 will retain data indefinitely.')
-@minValue(0)
-@maxValue(365)
-param diagnosticsRetentionInDays int
-
 @description('The location of the resources.')
 param location string
 
